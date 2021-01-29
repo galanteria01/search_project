@@ -2,7 +2,8 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
 }
-
+apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs.kotlin"
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
@@ -55,5 +56,12 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.2.0'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
+
+
+    implementation "androidx.room:room-runtime:2.2.6"
+    kapt "androidx.room:room-compiler:2.2.6"
+    implementation "androidx.room:room-ktx:2.2.6"
+    androidTestImplementation "androidx.room:room-testing:2.2.6"
+
 
 }
