@@ -6,6 +6,8 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 
+// DAO for ROOM database
+
 @Dao
 interface MusicDao {
 

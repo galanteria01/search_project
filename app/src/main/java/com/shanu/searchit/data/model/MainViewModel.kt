@@ -10,6 +10,8 @@ import retrofit2.Response
 class MainViewModel (private val repository: Repository):ViewModel() {
     val myResponseData: MutableLiveData<Response<SampleData>> = MutableLiveData()
 
+
+    // Coroutine used to get data so main thread doesn't get affected
     fun getData(term:String){
         viewModelScope.launch {
             val response = repository.getData(term)

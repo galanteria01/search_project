@@ -13,7 +13,7 @@ object RetrofitInstance {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
-
+    // Lazily initialised the api instance.
     val api:Api by lazy {
         retrofit.create(Api::class.java)
     }

@@ -7,6 +7,8 @@ import retrofit2.http.Query
 
 interface Api {
 
+    // Request sending for getting data
+
     @GET("search")
     suspend fun getData(
         @Query("term") searchTerm:String

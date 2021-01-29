@@ -6,33 +6,33 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.shanu.searchit.R
-import com.shanu.searchit.data.model.Results
+import com.shanu.searchit.room.Music
 
-class Adapter(private val searchResults: List<Results>) :RecyclerView.Adapter<Adapter.viewHolder>(){
+class OfflineAdapter(private val searchResults: List<Music>) :RecyclerView.Adapter<OfflineAdapter.ViewHolder>(){
 
 
     override fun getItemCount(): Int {
         return searchResults.size
     }
 
-    override fun onBindViewHolder(holder: viewHolder, position: Int) {
-        return holder.bind(searchResults[position])
-    }
-
-    // Created view holder for normal adapter
-    inner class viewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    // Created class viewholder for secondary offline adapter
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         private var songName: TextView = itemView.findViewById(R.id.songName)
         private var artistName :TextView = itemView.findViewById(R.id.artistName)
-        fun bind(song: Results){
+        fun bind(song: Music){
             songName.text = song.trackName
             artistName.text = song.artistName
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): viewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.song_ticket,parent,false)
-        return viewHolder(view)
+        return ViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        return holder.bind(searchResults[position])
     }
 
 
