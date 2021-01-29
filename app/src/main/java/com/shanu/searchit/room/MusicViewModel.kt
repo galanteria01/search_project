@@ -9,8 +9,8 @@ import kotlinx.coroutines.launch
 
 class MusicViewModel(application: Application) : AndroidViewModel(application){
 
-    private val readAllData : LiveData<List<Music>>
-    private val repository: MusicRepository
+    val readAllData : LiveData<List<Music>>
+    val repository: MusicRepository
 
     init{
         val musicDao = MusicDatabase.getDatabase(application).musicDao()
@@ -23,5 +23,4 @@ class MusicViewModel(application: Application) : AndroidViewModel(application){
             repository.addMusic(music)
         }
     }
-
 }

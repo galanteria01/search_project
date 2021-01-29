@@ -1,6 +1,6 @@
 package com.shanu.searchit.data.repository
 
-import SampleData
+import com.shanu.searchit.data.model.SampleData
 import com.shanu.searchit.data.api.RetrofitInstance
 import retrofit2.Response
 

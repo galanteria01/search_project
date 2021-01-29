@@ -1,6 +1,5 @@
 package com.shanu.searchit.data.model
 
-import SampleData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
